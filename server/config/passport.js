@@ -1,7 +1,7 @@
 const jwtStrategy= require('passport-jwt').Strategy;
 const extractJWT= require('passport-jwt').ExtractJwt;
 const mongoose = require('mongoose')
-const User = mongoose.model('user')
+const User = mongoose.model('user') 
 require('dotenv').config()
 const key = process.env.SECRET
 

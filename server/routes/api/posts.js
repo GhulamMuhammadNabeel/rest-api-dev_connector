@@ -155,7 +155,7 @@ router.post('/comment/:id',passport.authenticate('jwt',{session: false}),(req,re
     }).catch(err=>res.status(404).json({postnotfound: 'Post not found'}))
 })
 
-
+ 
 
 // @route                              Delete api/posts/comment/:id/:comment_id
 // @desc                               Delete comment post

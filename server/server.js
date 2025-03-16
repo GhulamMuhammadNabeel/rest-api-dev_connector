@@ -8,7 +8,7 @@ const profile = require('./routes/api/profile')
 const passport  = require('passport')
 require('dotenv').config()
 connectDB()
-
+ 
 //Body Parser to get req.body.//
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())

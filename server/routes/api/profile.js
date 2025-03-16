@@ -239,7 +239,7 @@ if (removeIndex !== -1) { // if not equal to -1 then remove the selected index
 })
 
 
-
+ 
 
 // @route                              Delete api/profile/education/:edu_id
 // @desc                               Delete education from profile

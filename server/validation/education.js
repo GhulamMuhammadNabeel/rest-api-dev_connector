@@ -12,7 +12,7 @@ module.exports = function validateExperienceInput(data) {
   }
   if (validator.isEmpty(data.degree)) {
     errors.degree = "Degree name is Required";
-  }
+  } 
   if (validator.isEmpty(data.from)) {
     errors.from = "Starting Date field is Required";
   }
