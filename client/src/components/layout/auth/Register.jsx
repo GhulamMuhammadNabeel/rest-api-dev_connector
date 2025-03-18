@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import axios from 'axios'
 const Register = () => {
   const [name, setname] = useState('')
   const [email, setemail] = useState('')
@@ -7,7 +7,7 @@ const Register = () => {
   const [password2, setpassword2] = useState('')
   const [errors, seterrors] = useState({})
 
-  const handleSubmit=(e)=>{
+  const handleSubmit=async(e)=>{
     e.preventDefault();
     const newUser={
         name: name,
@@ -15,8 +15,13 @@ const Register = () => {
         password: password,
         password2: password2,
     }
-    console.log(newUser)
-  }
+    try {
+      const res = await axios.post("/api/users/register", newUser);
+      console.log(res.data);
+    } catch (err) {
+      console.error(err.response?.data || "An error occurred");
+    }
+  };
 
   return (
     <div className="register">
@@ -27,7 +32,7 @@ const Register = () => {
         <p className="lead text-center">Create your DevConnector account</p>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <input type="text" className="form-control form-control-lg" placeholder="Name" onChange={(e)=>setname(e.target.value)} value={name} name="name" required />
+            <input type="text" className="form-control form-control-lg" placeholder="Name" onChange={(e)=>setname(e.target.value)} value={name} name="name" />
           </div>
           <div className="mb-3">
             <input type="email" className="form-control form-control-lg" placeholder="Email Address" onChange={(e)=>setemail(e.target.value)} value={email} name="email" />

@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const cors = require("cors")
 const bodyparser = require('body-parser')
 const connectDB = require('./config/db')
 const users = require('./routes/api/users')
@@ -8,7 +9,7 @@ const profile = require('./routes/api/profile')
 const passport  = require('passport')
 require('dotenv').config()
 connectDB()
- 
+app.use(cors())
 //Body Parser to get req.body.//
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())

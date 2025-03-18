@@ -16,7 +16,7 @@ require('dotenv').config()
 // @access                             Public
 router.get('/test',(req,res)=>res.json({msg:'Hello this user works'}))
 
-// @route                              GET api/users/register
+// @route                              POST api/users/register
 // @desc                               Tests Register route
 // @access                             Public
 router.post('/register',(req,res)=>{
