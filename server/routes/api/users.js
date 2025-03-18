@@ -73,6 +73,7 @@ router.post('/login',(req,res)=>{
     .then(user=>{
         if(!user){
             errors.email='Invalid Credentials'
+            errors.password='Invalid Credentials'
             return res.status(404).json(errors)
         }
         else{
@@ -96,6 +97,7 @@ router.post('/login',(req,res)=>{
                     )
                 }
                 else{
+                    errors.email='Invalid Credentials'
                     errors.password='Invalid Credentials'
                     res.status(404).json(errors)
                 }
