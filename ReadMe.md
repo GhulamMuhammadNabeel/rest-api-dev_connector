@@ -65,6 +65,7 @@ To run this project, you will need to add the following environment variables to
 
 `SECRET` The JWT secret key
 
+`PORT` Optional
 
 ## 🔮 Future Improvements
 
